@@ -1,7 +1,7 @@
 # ⚡ BrainBurst — Quiz Application
 
 ## 🔗 Live Demo
-[Click Here to Play](https://brain-burst-app.netlify.app)
+[Brain Burst Quiz App](https://brain-burst-app.netlify.app)
 
 ## ✨ Features
 - User Register / Login
