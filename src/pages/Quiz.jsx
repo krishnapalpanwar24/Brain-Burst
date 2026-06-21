@@ -124,7 +124,7 @@ export default function Quiz() {
                   cat === "REACT" ? "React" :
                     cat === "JS" ? "JavaScript" :
                       cat === "HTML" ? "HTML" :
-                        cat === "CSS" ? "🩷 CSS" : cat}
+                        cat === "CSS" ? "CSS" : cat}
               </option>
             ))}
           </select>
