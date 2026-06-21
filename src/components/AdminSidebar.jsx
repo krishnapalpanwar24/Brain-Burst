@@ -18,7 +18,7 @@ export default function AdminSidebar() {
         onClick={logout}
         className="mt-auto bg-red-600 hover:bg-red-700 text-white py-2 my-4 rounded-lg text-sm transition"
       >
-        🚪 Logout
+        Logout
       </button>
 
       <nav className="flex flex-col gap-2 flex-1">

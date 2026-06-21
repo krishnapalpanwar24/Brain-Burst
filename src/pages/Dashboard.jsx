@@ -47,12 +47,6 @@ export default function Dashboard() {
 
     const isDashboardHome = location.pathname === "/dashboard";
 
-    const catColors = {
-        REACT: "bg-blue-900/40 border-blue-500 text-blue-300 hover:bg-blue-900/70",
-        JS: "bg-yellow-900/40 border-yellow-500 text-yellow-300 hover:bg-yellow-900/70",
-        HTML: "bg-orange-900/40 border-orange-500 text-orange-300 hover:bg-orange-900/70",
-        CSS: "bg-pink-900/40 border-pink-500 text-pink-300 hover:bg-pink-900/70",
-    };
 
     return (
         <div className="flex min-h-screen bg-slate-900">
@@ -63,7 +57,7 @@ export default function Dashboard() {
                     <>
 
                         <h3 className="text-xl font-bold text-white mb-6">
-                            📊 Dashboard Overview
+                            Dashboard Overview
                         </h3>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -97,7 +91,7 @@ export default function Dashboard() {
 
 
                         <h3 className="text-xl font-bold text-white mb-4">
-                            📂 Category Wise Quizzes
+                            Category Wise Quizzes
                         </h3>
 
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -114,9 +108,7 @@ export default function Dashboard() {
                                                 state: { category: cat.name },
                                             })
                                         }
-                                        className={`border rounded-xl p-5 text-center cursor-pointer transition ${catColors[cat.name] ||
-                                            "bg-slate-800 border-slate-600 text-slate-300 hover:bg-slate-700"
-                                            }`}
+                                       className="border border-slate-600 bg-slate-800 text-slate-300 hover:bg-slate-700 hover:border-indigo-500 rounded-xl p-5 text-center cursor-pointer transition"
                                     >
                                         <div className="text-3xl font-bold mb-1">{cat.count}</div>
                                         <div className="text-sm font-medium">{cat.name}</div>
