@@ -85,7 +85,7 @@ export default function Quiz() {
           total: filtered.length,
           answers,
           user,
-          category: selectedCat  
+          category: selectedCat
         },
       });
       return;
@@ -103,29 +103,51 @@ export default function Quiz() {
 
   if (!started) return (
     <div className="min-h-screen bg-slate-900 flex items-center justify-center px-4">
-      <div className="bg-slate-800 border border-slate-700 rounded-2xl p-8 w-full max-w-md text-center shadow-2xl">
-        <h2 className="text-2xl font-bold text-white mb-2">🎯 Select Category</h2>
-        <p className="text-slate-400 mb-6">Choose a topic to start quiz</p>
-        <div className="flex flex-wrap justify-center gap-3 mb-6">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCat(cat)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition border ${selectedCat === cat
-                  ? "bg-indigo-600 border-indigo-600 text-white"
-                  : "border-slate-600 text-slate-300 hover:border-indigo-500 hover:text-white"
-                }`}
-            >
-              {cat}
-            </button>
-          ))}
+      <div className="bg-slate-800 border border-slate-700 rounded-2xl p-10 w-full max-w-xl text-center shadow-2xl">
+
+        <div className="text-5xl mb-4">🎯</div>
+        <h2 className="text-3xl font-bold text-white mb-2">Select Category</h2>
+        <p className="text-slate-400 text-base mb-8">
+          Choose a topic to start quiz
+        </p>
+
+       
+        <div className="relative mb-8">
+          <select
+            value={selectedCat}
+            onChange={(e) => setSelectedCat(e.target.value)}
+            className="w-full bg-slate-700 border border-slate-600 text-white rounded-xl px-5 py-4 text-base font-semibold focus:outline-none focus:border-indigo-500 appearance-none cursor-pointer"
+          >
+            {categories.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat === "ALL" ? "All Categories" :
+                  cat === "REACT" ? "React" :
+                    cat === "JS" ? "JavaScript" :
+                      cat === "HTML" ? "HTML" :
+                        cat === "CSS" ? "🩷 CSS" : cat}
+              </option>
+            ))}
+          </select>
+          
+          <div className="text-3xl absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
+            ▾
+          </div>
         </div>
+
+        
+        <div className="mb-6">
+          <span className="bg-indigo-600/20 text-indigo-400 text-sm font-semibold px-4 py-2 rounded-full border border-indigo-500">
+            Selected: {selectedCat === "ALL" ? "All Categories" : selectedCat}
+          </span>
+        </div>
+
         <button
           onClick={startQuiz}
-          className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3 rounded-xl w-full transition"
+          className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-4 rounded-xl w-full transition text-lg"
         >
-          🚀 Start Quiz
+          Start Quiz
         </button>
+
       </div>
     </div>
   );
@@ -137,6 +159,13 @@ export default function Quiz() {
     <div className="min-h-screen bg-slate-900 flex items-center justify-center px-4 py-10">
       <div className="bg-slate-800 border border-slate-700 rounded-2xl p-8 w-full max-w-2xl shadow-2xl">
 
+
+
+        <div className="text-center mb-4">
+          <span className="bg-indigo-600/20 text-indigo-400 text-base font-bold px-4 py-1.5 rounded-full border border-indigo-500 uppercase tracking-wide">
+            {selectedCat} Quiz
+          </span>
+        </div>
 
         <div className="flex justify-between items-center mb-4">
           <span className="text-slate-400 text-sm">
@@ -189,7 +218,7 @@ export default function Quiz() {
               onClick={() => handleNext()}
               className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl transition"
             >
-              {current + 1 >= filtered.length ? "See Results 🎉" : "Next Question →"}
+              {current + 1 >= filtered.length ? "See Results" : "Next Question →"}
             </button>
           ) : (
             <div className="w-full py-3 rounded-xl bg-transparent" />

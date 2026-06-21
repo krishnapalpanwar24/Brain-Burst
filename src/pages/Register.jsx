@@ -28,6 +28,7 @@ export default function Register() {
 
             localStorage.removeItem("userloggedIn");
             localStorage.removeItem("loggedInUser");
+            localStorage.removeItem("adminAuth");
 
             alert("Registered successfully!");
             nav("/login");
@@ -42,7 +43,7 @@ export default function Register() {
         <div className="min-h-screen bg-slate-900 flex items-center justify-center px-4">
             <div className="bg-slate-800 border border-slate-700 rounded-2xl p-8 w-full max-w-md shadow-2xl">
                 <h2 className="text-2xl font-bold text-center text-white mb-6">
-                    📝 Create Account
+                     Create Account
                 </h2>
                 <form onSubmit={submit} className="flex flex-col gap-4">
                     <input
