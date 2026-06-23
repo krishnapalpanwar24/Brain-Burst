@@ -1,7 +1,7 @@
 # ⚡ BrainBurst — Quiz Application
 
 ## 🔗 Live Demo
-[Brain Burst Quiz App](https://https://bburst.vercel.app)
+[Brain Burst Quiz App](https://bburst.vercel.app)
 
 ## ✨ Features
 - User Register / Login
